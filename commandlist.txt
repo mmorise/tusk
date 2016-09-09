@@ -1,0 +1,12 @@
+2
+
+DIO
+op.frame_period = 1;
+op.target_fs = fs;
+op.f0_floor = 40;
+op.f0_ceil = 1000;
+r = Dio(x, fs, op);
+f0 = r.f0;
+
+DIO+StoneMask
+f0 = StoneMask(x, fs, r.temporal_positions, r.f0);

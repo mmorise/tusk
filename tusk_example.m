@@ -8,7 +8,7 @@
 % Please download WORLD from the following.
 % http://ml.cs.yamanashi.ac.jp/world/english/index.html
 
-% Please set the frame shift to 1 ms. Since the test signal is 1.2 s,
+% Please set the frame shift to 1 ms. Since the duration of test signal is 1.2 s,
 % the estiamted result should be 1,200 (or 1201) samples.
 % Note: TUSK uses the result from 0.1 to 1.1 s (101 : 1100).
 %       It may be possible to evaluate the estimator even if it does not
@@ -53,7 +53,6 @@ clearvars -except parallel_flag N
 % In Act 3, you can set the dynamic range of amplitude.
 amp_list = 0 : 0.5 : 60;
 
-% ç≈èâÇ…1âÒé¿çs
 [tmp, method_list] = act3('commandlist.txt', amp_list, parallel_flag);
 result3 = zeros(size(tmp, 1), size(tmp, 2), N);
 for i = 2 : N
@@ -71,7 +70,6 @@ clearvars -except parallel_flag N
 % In Act 4, you can set the dynamic range of phase.
 phase_list = 0 : 0.05 : 2 * pi;
 
-% ç≈èâÇ…1âÒé¿çs
 [tmp, method_list] = act4('commandlist.txt', phase_list, parallel_flag);
 result4 = zeros(size(tmp, 1), size(tmp, 2), N);
 for i = 2 : N

@@ -31,7 +31,7 @@ parallel_flag = 1; % You want to use PCT.
 N = 5;
 
 %% ACT 1: Relationship between basic F0 and estimation performance
-clearvars -except parallel_flag
+clearvars -except parallel_flag N
 % In Act 1, you can set the frequency range.
 f0_list = 55 * 2 .^ ((0 : 48) / 12);
 
@@ -40,7 +40,7 @@ save result_act1.mat
 plot_figure(result1, freq2cent(f0_list), 'F0 (cent)', method_list);
 
 %% ACT 2: Influence of temporal fluctuation in F0 contour
-clearvars -except parallel_flag
+clearvars -except parallel_flag N
 % In Act 2, you can set the range of alpha.
 alpha_list = 0 : 0.1 : 25; % vibrato intensity
 
